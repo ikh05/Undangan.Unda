@@ -40,8 +40,8 @@
 	section{
 		width: 100vw;
 		height: 100vh;
-		overflow-x: auto;
-		overflow-y: hidden;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 </style>
