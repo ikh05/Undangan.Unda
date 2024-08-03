@@ -1,0 +1,44 @@
+/* Pinyon Script (gaya)
+	family=Roboto (santai)
+	family=Spectral (formal)*/
+
+/* color */
+/* bg 1 : #F7FBFEFF*/
+/* bg 2 : #fffaf6*/
+/* fc : #3B3633FF */
+
+:root{
+	--bg-1 : #fffaf6;
+	--text-coklat: #3B3633;
+}
+
+.family-pinyon{
+	font-family: 'Pinyon Script', sans-serif;
+}
+.family-roboto{
+	font-family: 'Roboto', sans-serif;
+}
+.family-spectral{
+	font-family: 'Spectral', sans-serif;
+}
+.bold{
+	font-weight: bold;
+}
+
+body{
+	overflow: hidden;
+}
+.bg-1{
+	background-color: var(--bg-1);
+}
+.bg-2{
+	background-color: var(--bg-2);
+}
+.text-coklat{
+	color: var(--text-coklat);
+}
+section{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
