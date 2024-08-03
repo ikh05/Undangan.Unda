@@ -1,3 +1,51 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poetsen+One&family=Roboto&family=Spectral&display=swap" rel="stylesheet">
+<style>	
+	:root{
+		--bg-1 : #fffaf6;
+		--text-coklat: #3B3633;
+	}
+
+	.family-pinyon{
+		font-family: 'Pinyon Script', sans-serif;
+	}
+	.family-roboto{
+		font-family: 'Roboto', sans-serif;
+	}
+	.family-spectral{
+		font-family: 'Spectral', sans-serif;
+	}
+	.bold{
+		font-weight: bold;
+	}
+
+
+	.not-scroll{
+		overflow: hidden;
+	}
+
+
+	.bg-1{
+		background-color: var(--bg-1);
+	}
+	.bg-2{
+		background-color: var(--bg-2);
+	}
+	.text-coklat{
+		color: var(--text-coklat);
+	}
+	
+
+	section{
+		width: 100vw;
+		height: 100vh;
+		overflow: scroll;
+	}
+
+</style>
+
+
 <section id="cover" class="bg-1">
 	<div class="container position-relative" style="height: 100%; width: 100%;">
 		<div class="backgrond position-absolute w-100 h-100">
@@ -28,3 +76,15 @@
 <section class="bg-2" id="undangan-main">
 	Tes
 </section>
+
+
+
+
+
+<script type="text/javascript">
+	let bukaUndangan = document.querySelector('[name=buka-undangan]');
+	let body = document.getElementById('body-main');
+	bukaUndangan.addEventListener('click', ()=>{
+		body.classList.remove('not-scroll')
+	})
+</script>
