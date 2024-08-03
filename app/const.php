@@ -6,6 +6,4 @@
 	}else{
 		define('BASE_URL', 'https://Undangan-Unda.ich.free.nf/');
 	}
-	var_dump(BASE_URL);
-
  ?> 
