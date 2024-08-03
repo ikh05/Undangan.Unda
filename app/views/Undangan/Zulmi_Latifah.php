@@ -47,12 +47,13 @@
 </style>
 
 
-<section id="cover" class="bg-1">
+<section id="cover position-relative" class="bg-1">
+	<div class="backgrond position-absolute w-100 h-100 overflow-hidden">
+		<img class="position-absolute top-0 start-0 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 1.png" alt="kembang 1" style="max-width: 50vw;">						
+		<img class="position-absolute top-100 start-100 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 2.png" alt="kembang 2" style="max-width: 50vw;">						
+	</div>
+	
 	<div class="container position-relative" style="height: 100%; width: 100%;">
-		<div class="backgrond position-absolute w-100 h-100 overflow-hidden">
-			<img class="position-absolute top-0 start-0 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 1.png" alt="kembang 1" style="max-width: 50vw;">						
-			<img class="position-absolute top-100 start-100 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 2.png" alt="kembang 2" style="max-width: 50vw;">						
-		</div>
 		<div class="position-relative family-pinyon text-end pt-3" style="z-index: 2;">
 			<h1 class="bold me-5 display-3">Undangan</h1>
 			<h1 class="bold display-3">Pernikahan</h1>
