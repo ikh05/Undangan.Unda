@@ -40,7 +40,8 @@
 	section{
 		width: 100vw;
 		height: 100vh;
-		overflow: hidden;
+		overflow-x: auto;
+		overflow-y: hidden;
 	}
 
 </style>
@@ -48,7 +49,7 @@
 
 <section id="cover" class="bg-1">
 	<div class="container position-relative" style="height: 100%; width: 100%;">
-		<div class="backgrond position-absolute w-100 h-100">
+		<div class="backgrond position-absolute w-100 h-100 overflow-hidden">
 			<img class="position-absolute top-0 start-0 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 1.png" alt="kembang 1" style="max-width: 50vw;">						
 			<img class="position-absolute top-100 start-100 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 2.png" alt="kembang 2" style="max-width: 50vw;">						
 		</div>
