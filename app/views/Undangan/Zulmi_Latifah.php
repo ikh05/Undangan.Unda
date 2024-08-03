@@ -8,8 +8,8 @@
 			<h1 class="bold me-5 display-3">Undangan</h1>
 			<h1 class="bold display-3">Pernikahan</h1>
 		</div>
-		<div class=" gambar-mempelai position-absolute start-50 translate-middle-x">
-			<img class="position-relative start-50 top-0 translate-middle-x" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/Cover.png" alt="gambar-mempelai" style="max-width: 55vw;">
+		<div class=" gambar-mempelai position-absolute start-50 translate-middle-x" style="height: 50vh;">
+			<img class="position-relative start-50 top-0 translate-middle-x" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/Cover.png" alt="gambar-mempelai" style="max-height: 100%;">
 			<img class="position-absolute top-100 start-50 translate-middle w-100" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 3.png" alt="gambar-mempelai">
 		</div>
 		<!-- <div class="row nama-mempelai">

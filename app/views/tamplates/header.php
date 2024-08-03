@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poetsen+One&family=Roboto&family=Spectral&display=swap" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" href="../assets/css/<?= $data['css'] ?>.css">
+	<link rel="stylesheet" type="text/css" href="<?= BASE_URL ?>assets/css/<?= $data['css'] ?>.css">
 
 	
 </head>
