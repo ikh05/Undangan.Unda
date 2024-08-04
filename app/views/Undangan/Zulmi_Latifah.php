@@ -240,12 +240,15 @@
 				console.log('didalam function yang dikirim ke ajaxSet');
 			});
 		})
+		
+
 		// MENAMPILKAN CHAT BARU
-		// setInterval(()=>{
-			let count = document.querySelector('#buku-tamu .chat').children.length;
-			console.log(count);
-			ajaxGet({count: count})
-		//, 10000);
+		let count = document.querySelector('#buku-tamu .chat').children.length;
+		ajaxGet({count: count}, (res)=>updateBukuTamu(res))
+		setInterval(()=>{
+			count = document.querySelector('#buku-tamu .chat').children.length;
+			ajaxGet({count: count}, (res)=>updateBukuTamu(res))
+		}, 10000);
 	})
 
 
@@ -294,6 +297,7 @@
 		ajax.send(urlEncodedData);
 	}
 	function updateBukuTamu (res) {
+		// akan menerima berapa banyak data yang beda antara UI dan DB
 		console.log('didalam update buku tamu');
 	}
 
