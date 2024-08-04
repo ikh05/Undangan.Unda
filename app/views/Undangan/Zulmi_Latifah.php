@@ -86,7 +86,7 @@
 	<div class="backgrond">
 		
 	</div>
-	<div class="container mt-4 mb-2 px-4 w-100">
+	<div class="container mt-4 mb-2 px-4 py-3 w-100">
 		<div class="row w-100 position-relative">
 			<img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x">
 		</div>
@@ -125,6 +125,25 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</section>
+<section id="rangkaian-acara" class="bg-1">
+	<div class="backgrond"></div>
+	<div class="container mt-4 mb-2 px-4 py-3 w-100">
+		<div class="row">
+			<p>Rangkaian Acara</p>
+		</div>
+		<div class="row">
+			<div class="col"><p>Akad Nikah</p></div>
+			<div class="col"><p>Resepsi Nikah</p></div>
+		</div>
+		<div>
+			<div class="akad">
+				<div class="tanggal"><p></p></div>
+			</div>
+		</div>
+
+
 	</div>
 </section>
 
