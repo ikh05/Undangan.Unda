@@ -137,7 +137,7 @@
 
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
-	<div class="container mt-4 mb-2 px-4 py-3 w-100">
+	<div class="container mt-4 mb-2 px-2 py-3 w-100">
 		<div class="row">
 			<p class="mb-2">Rangkaian Acara</p>
 		</div>
@@ -153,7 +153,7 @@
 					<p>Waktu</p>
 					<p>09.00 WIB</p>
 					<p>Hitung Mundur</p>
-					<iframe id="online-alarm-kur-iframe" src="https://embed-countdown.onlinealarmkur.com/id/#2024-07-18T09:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
+					<iframe id="countdown-akad" src="https://embed-countdown.onlinealarmkur.com/id/#2024-07-18T09:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
 					<p>Alamat</p>
 					<p>Jl. Trans Kalimantan, Km.18, Kec. Anjir Pasar, Kab.Barito Kuala</p>
 				</div>
@@ -163,7 +163,7 @@
 					<p>Waktu</p>
 					<p>08.00 WIB - Selesai</p>
 					<p>Hitung Mundur</p>
-					<iframe id="online-alarm-kur-iframe" src="https://embed-countdown.onlinealarmkur.com/id/#2024-09-08T08:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
+					<iframe id="countdown-resepsi" src="https://embed-countdown.onlinealarmkur.com/id/#2024-09-08T08:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
 					<p>Alamat</p>
 					<p>Jl. Trans Kalimantan, Km.18, Kec. Anjir Pasar, Kab.Barito Kuala</p>
 				</div>
@@ -214,6 +214,14 @@
 				event.preventDefault();
 			})
 		});
+
+		// menjaga ukuran countdown
+		const cdAkad = document.getElementById('countdown-akad')
+		const cdResepsi = document.getElementById('countdown-resepsi');
+		const w = document.querySelector('.rangkaian-acara-bungkus').offsetWidth;
+		console.log(w);
+		cdAkad.setAttribute('width', w)
+		cdResepsi.setAttribute('width', w)
 
 	})
 
