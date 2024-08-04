@@ -3,17 +3,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poetsen+One&family=Roboto&family=Spectral&display=swap" rel="stylesheet">
 <style>	
 	:root{
-		--bg-1 : #fffaf6;
+		--bg-1: #fffaf6;
+		--bg-2: #F9FBF8;
 		--text-coklat: #3B3633;
 	}
 
-	.family-pinyon{ 
+	.family-pinyon{ /* tulis indah */
 		font-family: 'Pinyon Script', sans-serif;
 	}
-	.family-roboto{
+	.family-roboto{ /* biasa */
 		font-family: 'Roboto', sans-serif;
 	}
-	.family-spectral{
+	.family-spectral{ /* tegas */
 		font-family: 'Spectral', sans-serif;
 	}
 	.text-bold{
@@ -22,7 +23,7 @@
 
 
 	.not-scroll{
-		overflow: hidden;
+/* 		overflow: hidden; */
 	}
 
 
@@ -39,15 +40,18 @@
 
 	section{
 		width: 100vw;
-		height: 100vh;
-		overflow-y: auto;
+		min-height: 100vh;
+/* 		overflow-y: auto; */
 		overflow-x: hidden;
+	}
+	p{
+		margin: 0;
 	}
 
 </style>
 
 
-<section id="cover position-relative" class="bg-1">
+<section id="cover position-relative" class="bg-1" style="height: 100vh;">
 	<div class="backgrond position-absolute w-100 h-100 overflow-hidden">
 		<img class="position-absolute top-0 start-0 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 1.png" alt="kembang 1" style="max-width: 50vw;">						
 		<img class="position-absolute top-100 start-100 translate-middle" src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/kembang 2.png" alt="kembang 2" style="max-width: 50vw;">						
@@ -75,8 +79,53 @@
 		</div>
 	</div>
 </section>
-<section class="bg-2" id="undangan-main">
-	Tes
+
+
+
+<section class="bg-2 text-center" id="undangan-main">
+	<div class="backgrond">
+		
+	</div>
+	<div class="container mt-4 mb-2 px-4 w-100">
+		<div class="row w-100 position-relative">
+			<img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x">
+		</div>
+		<div class="row">
+			<p>Assalamu'alaikum Warohmatullahi Waborakatuh</p>
+		</div>
+		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang <?= $data['to']; ?> untuk hadir pada pernikahan:</div>
+
+		<div class="row">
+			<div class="col-12 col-md-5">
+				<img src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/P.JPG" alt="mempelai perempuan" style="max-width: 100%;" class="border border-bottom-0 border-success border-2 rounded-top-4">
+			</div>
+			<div class="col">
+				<div class="row">
+					<p class="mb-0 fs-1 family-spectral">Siti Nur Latifah</p>
+				</div>
+			</div>
+			<div class="row">
+				<p>Putri dari </p>
+				<p>Bapak Agus Salim, S.Ag & Ibu Isnaniah, S.Ag</p>
+			</div>
+		</div>
+		<hr class="border-2 border-success">
+		<div class="row"><p class="mb-0 family-pinyon fs-2">dengan</p></div>
+		<hr class="col border-2 border-success">
+		<div class="row">
+			<div class="col-12 col-md-5 order-2">
+				<img src="<?= BASE_URL ?>assets/img/Zulmi_Latifah/L.JPG" alt="mempelai laki-laki" style="max-width: 100%;" class="border border-top-0 border-success border-2 rounded-bottom-4 order-2">
+			</div>
+			<div class="col order-1">
+				<div class="row">
+					<p class="mb-0 fs-1 family-spectral">Zulmi Almadina</p>
+				</div>
+				<div class="row">
+					<p>Putra dari </p><p>Bapak Arahman Saidi & Ibu Norjanah</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 
