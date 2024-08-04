@@ -145,8 +145,8 @@
 			<p acara="detail-akad" class="col btn border-end rounded-0 on">Akad Nikah</p>
 			<p acara="detail-resepsi" class="col btn border-start rounded-0">Resepsi Nikah</p>
 		</div>
-		<div class="rangkaian-acara-bungkus w-100 border-bottom pb-2 mb-2" style="overflow: hidden;" >
-			<div class="d-flex flex-row" style="width: 200%;">
+		<div class="rangkaian-acara-bungkus position-relative w-100 border-bottom pb-2 mb-2" style="overflow: hidden;" >
+			<div class="d-flex flex-row position-relative" style="width: 200%;">
 				<div id="detail-akad" style="width: 50%;">
 					<p>Tanggal</p>
 					<p>Kamis, 18 Juli 2024</p>
