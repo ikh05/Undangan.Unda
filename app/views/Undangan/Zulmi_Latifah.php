@@ -142,8 +142,8 @@
 			<p class="mb-2">Rangkaian Acara</p>
 		</div>
 		<div id="rangkaian-acara-menu" class="row border border-start-0 mb-1 border-end-0">
-			<p acara="detail-akad" class="col btn border-end rounded-0 on">Akad Nikah</p>
-			<p acara="detail-resepsi" class="col btn border-start rounded-0">Resepsi Nikah</p>
+			<p acara="detail-akad" class="col btn border-end rounded-0">Akad Nikah</p>
+			<p acara="detail-resepsi" class="col btn border-start rounded-0 on">Resepsi Nikah</p>
 		</div>
 		<div class="rangkaian-acara-bungkus position-relative w-100 border-bottom pb-2 mb-2" style="overflow: hidden;" >
 			<div class="d-flex flex-row position-relative" style="width: 200%;">
@@ -199,19 +199,14 @@
 
 		// mekanisme agenda acara
 		const linksRangkaianAcara = document.querySelectorAll("#rangkaian-acara-menu p");
+		scrollRangkaianAcara(linksRangkaianAcara);
 		linksRangkaianAcara.forEach( link => {
 			link.addEventListener('click', event => {
 				// mengubah label aktif
 				linksRangkaianAcara.forEach(link => link.classList.remove('on'));
 				link.classList.add('on');
 				// scroll tampilan detail
-				const targetElemet = document.getElementById(link.getAttribute('acara'));
-				console.log(targetElemet)
-				document.querySelector('.rangkaian-acara-bungkus').scrollTo({
-					left: targetElemet.offsetLeft,
-					behavior: 'smooth'
-				});
-				event.preventDefault();
+				scrollRangkaianAcara(linksRangkaianAcara);
 			})
 		});
 
@@ -224,5 +219,18 @@
 		cdResepsi.setAttribute('width', w)
 
 	})
+
+
+	function scrollRangkaianAcara (links) {
+		links.forEach(link=>{
+			if(link.classList.contains('on')){
+				const targetElemet = document.getElementById(link.getAttribute('acara'));
+				document.querySelector('.rangkaian-acara-bungkus').scrollTo({
+					left: targetElemet.offsetLeft,
+					behavior: 'smooth'
+				});
+			}
+		})
+	}
 
 </script>
