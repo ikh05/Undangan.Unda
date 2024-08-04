@@ -103,10 +103,10 @@
 				<div class="row">
 					<p class="mb-0 fs-1 family-spectral">Siti Nur Latifah</p>
 				</div>
-			</div>
-			<div class="row">
-				<p>Putri dari </p>
-				<p>Bapak Agus Salim, S.Ag & Ibu Isnaniah, S.Ag</p>
+				<div class="row">
+					<p>Putri dari </p>
+					<p>Bapak Agus Salim, S.Ag & Ibu Isnaniah, S.Ag</p>
+				</div>
 			</div>
 		</div>
 		<hr class="border-2 border-success">
@@ -140,6 +140,12 @@
 		<div>
 			<div class="akad">
 				<div class="tanggal"><p></p></div>
+			</div>
+			<div class="resepsi">
+				<div class="tanggal">Tanggal</div>
+				<div class="countDown">
+					<iframe id="online-alarm-kur-iframe" src="https://embed-countdown.onlinealarmkur.com/id/#2024-09-08T08:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
+				</div>
 			</div>
 		</div>
 
