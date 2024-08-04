@@ -42,7 +42,6 @@
 	}
 	section{
 		width: 100vw;
-		min-height: 100vh;
 		overflow-x: hidden;
 	}
 	p{
@@ -85,8 +84,6 @@
 		</div>
 	</div>
 </section>
-
-
 
 <section class="bg-2 text-center" id="undangan-main">
 	<div class="backgrond">
@@ -132,9 +129,6 @@
 	</div>
 </section>
 
-
-
-
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
 	<div class="container mt-4 mb-2 px-2 py-3 w-100">
@@ -169,26 +163,46 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mb-2">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1335.7446563411888!2d114.50055957738276!3d-3.1478142442717547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDgnNTIuMCJTIDExNMKwMzAnMDQuMiJF!5e0!3m2!1sid!2sid!4v1722773706520!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
-		<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn btn-success">Buka Google Maps</a>
-
-
 	</div>
 </section>
 
+<section id="google-maps" class="text-center">
+	<p class="text-bold">Lokasi Acara</p>
+	<div class="row mb-2">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1335.7446563411888!2d114.50055957738276!3d-3.1478142442717547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDgnNTIuMCJTIDExNMKwMzAnMDQuMiJF!5e0!3m2!1sid!2sid!4v1722773706520!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+	<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn btn-success">Buka Google Maps</a>
+</section>
 
-
+<section id="buku-tamu">
+	<div class="chat">
+		<div class="card saya">
+			<div class="card-header">Nama</div>
+			<div class="card-body">Isi</div>
+			<div class="card-footer">Jam</div>
+		</div>
+	</div>
+	<!-- DB pengunjung    -> id, nama
+		 DB bukuTamu (1/1)-> id, idOrang, isiUcapan, kapan 
+		 
+		 idOrang akan disimpan kedalam localstorage saat pertama kali ngirim, seterusnya akan menggunakan itu
+		 -->
+	<form id="buku-tamu-form">
+		<input type="hidden" name="nama-tabel" value="<?= $data['dir-assets'] ?>">
+		<input type="hidden" name="idOrang" value="">
+		<input type="text" name="nama" required value="<?= ($data['to'] != 'Bapak/Ibu/Saudara(i)') ? $data['to'] : ''?>">
+		<button class="btn btn-success" type="submit">Kirim</button>
+	</form>
+</section>
 
 
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', ()=>{
+		// bersihkan #a dalam URL
 		if (window.location.hash !== '') {
 	        // Menghilangkan fragment dari URL tanpa memuat ulang halaman
 	        history.replaceState(null, null, window.location.pathname + window.location.search);
 	    }
-
 
 		// buka undangan
 		const bukaUndangan = document.querySelector('[name=buka-undangan]');
@@ -216,8 +230,22 @@
 		const w = document.querySelector('.rangkaian-acara-bungkus').offsetWidth;
 		console.log(w);
 		cdAkad.setAttribute('width', w)
-		cdResepsi.setAttribute('width', w)
+		cdResepsi.setAttribute('width', w);
 
+		// buku tamu
+		const bukuTamu = document.getElementById('buku-tamu-form');
+		bukuTamu.addEventListener('submit', event =>{
+			event.preventDefault();
+			ajaxSet(bukuTamu, function(res){
+				console.log('didalam function yang dikirim ke ajaxSet');
+			});
+		})
+		// MENAMPILKAN CHAT BARU
+		// setInterval(()=>{
+			let count = document.querySelector('#buku-tamu .chat').children.length;
+			console.log(count);
+			ajaxGet({count: count})
+		//, 10000);
 	})
 
 
@@ -232,5 +260,42 @@
 			}
 		})
 	}
+
+	function ajaxSet (form, f=''){
+		let data = new FormData(form);
+		let ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState == 4 && ajax.status == 200) {
+				let response = ajax.responseText;
+				console.log(response);
+				if(typeof(f) === 'function') f(response);
+			}else{
+				console.log(ajax.statusText);
+			}
+		};
+		ajax.open('POST', '<?= BASE_URL ?>public/kirimAjax', true);
+		ajax.setRequestHeader('Accept', 'application/json');
+		ajax.send(data);
+	}
+	function ajaxGet (data={}, f='') {
+		let ajax = new XMLHttpRequest();
+		 const urlEncodedData = new URLSearchParams(data).toString();
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState == 4 && ajax.status == 200) {
+				let response = ajax.responseText;
+				console.log(response);
+				if(typeof(f) === 'function') f(response);
+			}else{
+				console.log(ajax.statusText);
+			}
+		};
+		ajax.open('POST', '<?= BASE_URL ?>public/ambilAjax', true);
+		ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		ajax.send(urlEncodedData);
+	}
+	function updateBukuTamu (res) {
+		console.log('didalam update buku tamu');
+	}
+
 
 </script>

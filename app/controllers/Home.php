@@ -1,7 +1,7 @@
 <?php    
 class Home extends Controller{
-	public function index(){
-		$this->view('Error/UndanganNotFound');
+	public function index($error='Error 404: Undangan Tidak Ditemukan!'){
+		$this->view('Error/UndanganNotFound', $error);
 	}
 	public function zulmi_latifah($to = "Bapak/Ibu/Saudara(i)"){
 		$data['to'] = str_replace('_', ' ', $to);
@@ -10,5 +10,20 @@ class Home extends Controller{
 		$this->view('tamplates/header', $data);
 		$this->view('Undangan/Zulmi_Latifah', $data);
 		$this->view('tamplates/footer', $data);
+	}
+
+	public function kirimAjax(){
+		if(empty($_POST)){
+			$this->index('Eror 403: Halaman kirimAjax Tidak Boleh Diakses!');
+		}else{
+			var_dump($_POST);
+		}
+	}
+	public function ambilAjax(){
+		if(empty($_POST)){
+			$this->index('Eror 403: Halaman ambilAjax Tidak Boleh Diakses!');
+		}else{
+			var_dump($_POST);
+		}
 	}
 }

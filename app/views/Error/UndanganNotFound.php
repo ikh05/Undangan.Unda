@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>404 HTML Template by Colorlib</title>
+<title><?= $data ?></title>
 
 <style id="" media="all">/* vietnamese */
 @font-face {
@@ -55,12 +55,12 @@
 <div></div>
 </div>
 <h1>oops!</h1>
-<h2>Error 404 : Undangan Tidak Ditemukan</h2>
+<h2><?= $data ?></h2>
 <div class="notfound-social">
 <!-- <a href=""><i class="fa-brands fa-facebook"></i></a> -->
 <!-- <a href=""><i class="fa-brands fa-twitter"></i></a> -->
-<!-- <a href=""><i class="fa-brands fa-pinterest"></i></a> -->
-<!-- <a href=""><i class="fa-brands fa-google-plus"></i></a> -->
+<a href="https://www.instagram.com/m_ikhsann05"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://github.com/ikh05"><i class="fa-brands fa-github"></i></a>
 </div>
 </div>
 </div>
