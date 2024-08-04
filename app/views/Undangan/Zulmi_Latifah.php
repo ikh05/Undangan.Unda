@@ -142,8 +142,8 @@
 			<p class="mb-2">Rangkaian Acara</p>
 		</div>
 		<div id="rangkaian-acara-menu" class="row border border-start-0 mb-1 border-end-0">
-			<a href="#detail-akad" class="col btn border-end rounded-0 on"><p>Akad Nikah</p></a>
-			<a href="#detail-resepsi" class="col btn border-start rounded-0"><p>Resepsi Nikah</p></a>
+			<p acara="detail-akad" class="col btn border-end rounded-0 on">Akad Nikah</p>
+			<p acara="detail-resepsi" class="col btn border-start rounded-0">Resepsi Nikah</p>
 		</div>
 		<div class="rangkaian-acara-bungkus w-100 border-bottom pb-2 mb-2" style="overflow: hidden;" >
 			<div class="d-flex flex-row" style="width: 200%;">
@@ -198,13 +198,20 @@
 		});
 
 		// mekanisme agenda acara
-		const linksRangkaianAcara = document.querySelectorAll("#rangkaian-acara-menu a");
+		const linksRangkaianAcara = document.querySelectorAll("#rangkaian-acara-menu p");
 		linksRangkaianAcara.forEach( link => {
 			link.addEventListener('click', event => {
-				console.log(link);
+				// mengubah label aktif
 				linksRangkaianAcara.forEach(link => link.classList.remove('on'));
-
 				link.classList.add('on');
+				// scroll tampilan detail
+				const targetElemet = document.getElementById(link.getAttribute('acara'));
+				console.log(targetElemet)
+				document.querySelector('.rangkaian-acara-bungkus').scrollTo({
+					left: targetElemet.offsetLeft,
+					behavior: 'smooth'
+				});
+				event.preventDefault();
 			})
 		});
 
