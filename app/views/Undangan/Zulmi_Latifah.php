@@ -349,11 +349,11 @@
 	}
 	function ajaxGet (data={}, callback='') {
 		let ajax = new XMLHttpRequest();
-		 const urlEncodedData = new URLSearchParams(data).toString();
+		const urlEncodedData = new URLSearchParams(data).toString();
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				let response = JSON.parse(ajax.responseText);
-				console.log(response);
+				console.log(ajax.responseText);
 				if(typeof(callback) === 'function') callback(response);
 			}else{
 				console.log(ajax.statusText);
