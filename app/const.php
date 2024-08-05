@@ -18,4 +18,7 @@
 	define('BASE_ID_ORANG', 'undangan.unda-idOrang');
 
 	}
+
+
+	var_dump($_SERVER); die;
  ?> 
