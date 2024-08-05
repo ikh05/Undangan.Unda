@@ -10,15 +10,15 @@
 		define('DB_USER', 'if0_36479043');
 		define('DB_PASS', 'Ikhsan05');
 		define('DB_NAME', 'if0_36479043_undangan_unda');
-		if($_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1'){
-			define('BASE_URL', 'http://Undangan-Unda.ich.free.nf/');
-		}else{
+		if(isset($_SERVER['HTTP_X_FORWARDED_PROTO'])){
 			define('BASE_URL', 'https://Undangan-Unda.ich.free.nf/');
+		}else{
+			define('BASE_URL', 'http://Undangan-Unda.ich.free.nf/');
 		}
 	define('BASE_ID_ORANG', 'undangan.unda-idOrang');
 
 	}
 
 
-	var_dump($_SERVER); die;
+	// var_dump($_SERVER); die;
  ?> 
