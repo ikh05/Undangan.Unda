@@ -166,7 +166,7 @@
 	</div>
 </section>
 
-<section id="google-maps" class="text-center">
+<section id="google-maps" class="text-center mb-2 pb-4" style="background-color: #F8F9FAFF;">
 	<p class="text-bold">Lokasi Acara</p>
 	<div class="row mb-2">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1335.7446563411888!2d114.50055957738276!3d-3.1478142442717547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDgnNTIuMCJTIDExNMKwMzAnMDQuMiJF!5e0!3m2!1sid!2sid!4v1722773706520!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -174,25 +174,83 @@
 	<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn btn-success">Buka Google Maps</a>
 </section>
 
-<section id="buku-tamu">
-	<div class="chat">
-		<div class="card saya">
-			<div class="card-header">Nama</div>
-			<div class="card-body">Isi</div>
-			<div class="card-footer">Jam</div>
+<section id="buku-tamu" class="mt-3 bg-1 pt-4">
+	<p class="text-bold text-center mb-2">Buku Tamu</p>
+	<div class="container px-4">
+		<div class="chat border rounded p-3 bg-2 my-3" style="max-height: 50vh; overflow-y: auto;">
+			<div class="card mb-2">
+				<div class="card-body py-1">
+					<h5 class="card-title border-bottom">~ ST. Humaira</h5>
+					<div class="d-flex justify-content-between flex-wrap">
+						<p class="card-text">Semoga langgeng</p>
+						<p class="card-text"><small class="text-body-secondary">5/7/2024 08.00</small></p>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-2">
+				<div class="card-body py-1">
+					<h5 class="card-title border-bottom">~ Muhammad Ikhsan</h5>
+					<div class="d-flex justify-content-between flex-wrap">
+						<p class="card-text">Selamat menempuh kehidupan baru, semoga dimudahkan dalam mengarung kehidupan rumah tangga.</p>
+						<p class="card-text"><small class="text-body-secondary">Kemarin 20.00</small></p>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-2 text-end">
+				<div class="card-body py-1">
+					<h5 class="card-title border-bottom">Saya ~</h5>
+					<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
+						<p class="card-text">Selamat</p>
+						<p class="card-text "><small class="text-body-secondary">06.35</small></p>
+					</div>
+				</div>
+			</div>
+			<div class="card mb-2 text-end">
+				<div class="card-body py-1">
+					<h5 class="card-title border-bottom">Saya ~</h5>
+					<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
+						<p class="card-text">Tes scroll</p>
+						<p class="card-text "><small class="text-body-secondary">06.35</small></p>
+					</div>
+				</div>
+			</div>
 		</div>
+		<form id="buku-tamu-form" class="border rounded bg-2 card">
+			<div class="card-body pb-0">
+				<div class="inputHidden">
+					<input type="hidden" name="nama-tabel" value="<?= $data['nama-tabel'] ?>">
+					<input type="hidden" name="idOrang" value="-1">
+				</div>
+				<div class="inputGruop">
+					<div class="form-floating mb-3">
+						<input placeholder="Nama" id="nama" class="form-control" type="text" name="nama" required value="<?= ($data['to'] != 'Bapak/Ibu/Saudara(i)') ? $data['to'] : ''?>">
+						<label for="nama">Nama</label>
+					</div>
+					<div class="form-floating mb-3">
+						<textarea placeholder="Pesan dan Doa" id="isi" class="form-control" name="isi" required style="height: 7rem;"></textarea>
+						<label for="isi">Doa dan Ucapan</label>
+					</div>
+					<div class="form-floating mb-3">
+						<select class="form-select" id="hadir" name="hadir">
+							<option value="1">Akan Hadir</option>
+							<option value="0">Belum Tahu</option>
+							<option value="-1">Berhalangan Hadir</option>
+						</select>
+						<label for="hadir">Apakah kamu berhadir</label>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<button class="btn btn-success" type="submit">Kirim</button>
+			</div>
+		</form>
 	</div>
+
 	<!-- DB pengunjung    -> id, nama
 		 DB bukuTamu (1/1)-> id, idOrang, isiUcapan, kapan 
 		 
 		 idOrang akan disimpan kedalam localstorage saat pertama kali ngirim, seterusnya akan menggunakan itu
 		 -->
-	<form id="buku-tamu-form">
-		<input type="hidden" name="nama-tabel" value="<?= $data['dir-assets'] ?>">
-		<input type="hidden" name="idOrang" value="">
-		<input type="text" name="nama" required value="<?= ($data['to'] != 'Bapak/Ibu/Saudara(i)') ? $data['to'] : ''?>">
-		<button class="btn btn-success" type="submit">Kirim</button>
-	</form>
 </section>
 
 
@@ -224,30 +282,38 @@
 			})
 		});
 
-		// menjaga ukuran countdown
+		// MENJAGA UKURAN COUNTDOWN
 		const cdAkad = document.getElementById('countdown-akad')
 		const cdResepsi = document.getElementById('countdown-resepsi');
 		const w = document.querySelector('.rangkaian-acara-bungkus').offsetWidth;
-		console.log(w);
 		cdAkad.setAttribute('width', w)
 		cdResepsi.setAttribute('width', w);
 
-		// buku tamu
+		// ID-ORANG
+		const idOrang = document.querySelector('[name=idOrang]');
+		if(localStorage.getItem('<?= BASE_ID_ORANG ?>') !== null){
+			idOrang.value = localStorage.getItem('<?= BASE_ID_ORANG ?>');
+		}
+
+		// MENGIRIM UCAPAN
 		const bukuTamu = document.getElementById('buku-tamu-form');
 		bukuTamu.addEventListener('submit', event =>{
 			event.preventDefault();
-			ajaxSet(bukuTamu, function(res){
-				console.log('didalam function yang dikirim ke ajaxSet');
+			ajaxSet(bukuTamu, res => {
+				localStorage.setItem('<?= BASE_ID_ORANG ?>', res['idOrang']);
+				document.querySelector('#buku-tamu #isi').value = '';
+				let count = document.querySelector('#buku-tamu .chat').children.length;
+				ajaxGet({count, namaTabel:'<?= $data['nama-tabel'] ?>'}, res=>updateBukuTamu(res));
 			});
 		})
 		
 
 		// MENAMPILKAN CHAT BARU
 		let count = document.querySelector('#buku-tamu .chat').children.length;
-		ajaxGet({count: count}, (res)=>updateBukuTamu(res))
+		ajaxGet({count, namaTabel:'<?= $data['nama-tabel'] ?>'}, res=>updateBukuTamu(res))
 		setInterval(()=>{
 			count = document.querySelector('#buku-tamu .chat').children.length;
-			ajaxGet({count: count}, (res)=>updateBukuTamu(res))
+			ajaxGet({count, namaTabel:'<?= $data['nama-tabel'] ?>'}, res=>updateBukuTamu(res))
 		}, 10000);
 	})
 
@@ -264,14 +330,15 @@
 		})
 	}
 
-	function ajaxSet (form, f=''){
+	function ajaxSet (form, callback=''){
 		let data = new FormData(form);
 		let ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
-				let response = ajax.responseText;
-				console.log(response);
-				if(typeof(f) === 'function') f(response);
+				let response = JSON.parse(ajax.responseText);
+				console.log(ajax.responseText)
+				// console.log(response)
+				if(typeof(callback) === 'function') callback(response);
 			}else{
 				console.log(ajax.statusText);
 			}
@@ -280,14 +347,14 @@
 		ajax.setRequestHeader('Accept', 'application/json');
 		ajax.send(data);
 	}
-	function ajaxGet (data={}, f='') {
+	function ajaxGet (data={}, callback='') {
 		let ajax = new XMLHttpRequest();
 		 const urlEncodedData = new URLSearchParams(data).toString();
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
-				let response = ajax.responseText;
+				let response = JSON.parse(ajax.responseText);
 				console.log(response);
-				if(typeof(f) === 'function') f(response);
+				if(typeof(callback) === 'function') callback(response);
 			}else{
 				console.log(ajax.statusText);
 			}
@@ -298,7 +365,9 @@
 	}
 	function updateBukuTamu (res) {
 		// akan menerima berapa banyak data yang beda antara UI dan DB
-		console.log('didalam update buku tamu');
+		if(res.length){
+			console.log(res)
+		}
 	}
 
 

@@ -7,6 +7,7 @@ class Home extends Controller{
 		$data['to'] = str_replace('_', ' ', $to);
 		$data['title'] = 'Zulmi & Latifah';
 		$data['dir-assets'] = 'Zulmi_Latifah';// assets 
+		$data['nama-tabel'] = 'zulmi_latifah'; /*jangan diubah*/
 		$this->view('tamplates/header', $data);
 		$this->view('Undangan/Zulmi_Latifah', $data);
 		$this->view('tamplates/footer', $data);
@@ -16,14 +17,17 @@ class Home extends Controller{
 		if(empty($_POST)){
 			$this->index('Eror 403: Halaman kirimAjax Tidak Boleh Diakses!');
 		}else{
-			var_dump($_POST);
+			$this->model('Model_BukuTamu')->simpan($_POST['nama-tabel'], $_POST);
+			echo (json_encode($_POST));
 		}
 	}
 	public function ambilAjax(){
 		if(empty($_POST)){
 			$this->index('Eror 403: Halaman ambilAjax Tidak Boleh Diakses!');
 		}else{
-			var_dump($_POST);
+			// MEKANISME MENGECEK KE DATABASE
+			$data = $this->model('Model_BukuTamu')->ambil($_POST['namaTabel'], $_POST['count']);
+			echo (json_encode($data));
 		}
 	}
 }
