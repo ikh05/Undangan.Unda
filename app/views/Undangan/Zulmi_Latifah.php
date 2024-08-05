@@ -55,7 +55,7 @@
 	}
 </style>
 
-
+<!-- COVER -->
 <section id="cover position-relative" class="bg-1" style="height: 100vh;">
 	<div class="backgrond position-absolute w-100 h-100 overflow-hidden">
 		<img class="position-absolute top-0 start-0 translate-middle" src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/kembang 1.png" alt="kembang 1" style="max-width: 50vw;">						
@@ -85,6 +85,7 @@
 	</div>
 </section>
 
+<!-- IDENTITAS MEMPELAI -->
 <section class="bg-2 text-center" id="undangan-main">
 	<div class="backgrond">
 	</div>
@@ -129,6 +130,7 @@
 	</div>
 </section>
 
+<!-- RANGKAIAN ACARA -->
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
 	<div class="container mt-4 mb-2 px-2 py-3 w-100">
@@ -166,6 +168,7 @@
 	</div>
 </section>
 
+<!-- LOKASI ACARA -->
 <section id="google-maps" class="text-center mb-2 pb-4" style="background-color: #F8F9FAFF;">
 	<p class="text-bold">Lokasi Acara</p>
 	<div class="row mb-2">
@@ -174,47 +177,11 @@
 	<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn btn-success">Buka Google Maps</a>
 </section>
 
+<!-- BUKU TAMU -->
 <section id="buku-tamu" class="mt-3 bg-1 pt-4">
-	<p class="text-bold text-center mb-2">Buku Tamu</p>
+	<p class="text-bold text-center mb-2 fs-2 family-spectral">Buku Tamu</p>
 	<div class="container px-4">
-		<div class="chat border rounded p-3 bg-2 my-3" style="max-height: 50vh; overflow-y: auto;">
-			<div class="card mb-2">
-				<div class="card-body py-1">
-					<h5 class="card-title border-bottom">~ ST. Humaira</h5>
-					<div class="d-flex justify-content-between flex-wrap">
-						<p class="card-text">Semoga langgeng</p>
-						<p class="card-text"><small class="text-body-secondary">5/7/2024 08.00</small></p>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-2">
-				<div class="card-body py-1">
-					<h5 class="card-title border-bottom">~ Muhammad Ikhsan</h5>
-					<div class="d-flex justify-content-between flex-wrap">
-						<p class="card-text">Selamat menempuh kehidupan baru, semoga dimudahkan dalam mengarung kehidupan rumah tangga.</p>
-						<p class="card-text"><small class="text-body-secondary">Kemarin 20.00</small></p>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-2 text-end">
-				<div class="card-body py-1">
-					<h5 class="card-title border-bottom">Saya ~</h5>
-					<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
-						<p class="card-text">Selamat</p>
-						<p class="card-text "><small class="text-body-secondary">06.35</small></p>
-					</div>
-				</div>
-			</div>
-			<div class="card mb-2 text-end">
-				<div class="card-body py-1">
-					<h5 class="card-title border-bottom">Saya ~</h5>
-					<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
-						<p class="card-text">Tes scroll</p>
-						<p class="card-text "><small class="text-body-secondary">06.35</small></p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="chat border rounded p-3 bg-2 my-3" style="max-height: 50vh; overflow-y: auto;"></div>
 		<form id="buku-tamu-form" class="border rounded bg-2 card">
 			<div class="card-body pb-0">
 				<div class="inputHidden">
@@ -336,7 +303,7 @@
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				let response = JSON.parse(ajax.responseText);
-				console.log(ajax.responseText)
+				// console.log(ajax.responseText)
 				// console.log(response)
 				if(typeof(callback) === 'function') callback(response);
 			}else{
@@ -353,7 +320,6 @@
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				let response = JSON.parse(ajax.responseText);
-				console.log(ajax.responseText);
 				if(typeof(callback) === 'function') callback(response);
 			}else{
 				console.log(ajax.statusText);
@@ -364,9 +330,35 @@
 		ajax.send(urlEncodedData);
 	}
 	function updateBukuTamu (res) {
-		// akan menerima berapa banyak data yang beda antara UI dan DB
 		if(res.length){
-			// console.log(res)
+			console.log(res);
+			const ucapan = document.querySelector('#buku-tamu .chat');
+			let id = localStorage.getItem('<?= BASE_ID_ORANG ?>');
+			res.reverse().forEach( chat => {
+				let newChat = '';
+				if(id == chat['idOrang']){
+					newChat = `<div class="card mb-2 text-end">
+						<div class="card-body py-1">
+							<p class="card-title border-bottom text-bold family-roboto">Saya ~</p>
+							<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
+								<p class="card-text">${chat['isi']}</p>
+								<p class="card-text "><small class="text-body-secondary">${chat['waktu']}</small></p>
+							</div>
+						</div>
+					</div>`
+				}else{
+					newChat = `<div class="card mb-2">
+						<div class="card-body py-1">
+							<p class="card-title border-bottom text-bold family-roboto">~ ${chat['nama']}</p>
+							<div class="d-flex justify-content-between flex-wrap">
+								<p class="card-text">${chat['isi']}</p>
+								<p class="card-text"><small class="text-body-secondary">${chat['waktu']}</small></p>
+							</div>
+						</div>
+					</div>`
+				}
+				ucapan.innerHTML = ucapan.innerHTML + newChat;
+			});
 		}
 	}
 
