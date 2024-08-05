@@ -5,16 +5,17 @@
 		define('DB_PASS', '');
 		define('DB_NAME', 'undangan_unda');
 		define('BASE_URL', 'http://localhost/Undangan.ku/');
-
 	}else{
-		// DB Hosting
 		define('DB_HOST', 'sql113.infinityfree.com');
 		define('DB_USER', 'if0_36479043');
 		define('DB_PASS', 'Ikhsan05');
 		define('DB_NAME', 'if0_36479043_undangan_unda');
-		define('BASE_URL', ($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].'/public/'));
-	}
-
-
+		if($_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1'){
+			define('BASE_URL', 'http://Undangan-Unda.ich.free.nf/');
+		}else{
+			define('BASE_URL', 'https://Undangan-Unda.ich.free.nf/');
+		}
 	define('BASE_ID_ORANG', 'undangan.unda-idOrang');
+
+	}
  ?> 
