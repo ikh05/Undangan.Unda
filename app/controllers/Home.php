@@ -22,12 +22,12 @@ class Home extends Controller{
 		}
 	}
 	public function ambilAjax(){
+			echo (json_encode($_POST));
 		if(empty($_POST)){
 			$this->index('Eror 403: Halaman ambilAjax Tidak Boleh Diakses!');
 		}else{
 			// MEKANISME MENGECEK KE DATABASE
 			// $data = $this->model('Model_BukuTamu')->ambil($_POST['namaTabel'], $_POST['count']);
-			echo (json_encode($_POST));
 		}
 	}
 }
