@@ -26,8 +26,8 @@ class Home extends Controller{
 			$this->index('Eror 403: Halaman ambilAjax Tidak Boleh Diakses!');
 		}else{
 			// MEKANISME MENGECEK KE DATABASE
-			$data = $this->model('Model_BukuTamu')->ambil($_POST['namaTabel'], $_POST['count']);
-			echo (json_encode($data));
+			// $data = $this->model('Model_BukuTamu')->ambil($_POST['namaTabel'], $_POST['count']);
+			echo (json_encode($_POST));
 		}
 	}
 }
