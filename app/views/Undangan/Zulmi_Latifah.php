@@ -366,7 +366,7 @@
 	function updateBukuTamu (res) {
 		// akan menerima berapa banyak data yang beda antara UI dan DB
 		if(res.length){
-			console.log(res)
+			// console.log(res)
 		}
 	}
 
