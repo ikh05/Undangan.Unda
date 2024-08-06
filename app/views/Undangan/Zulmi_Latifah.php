@@ -79,7 +79,7 @@
 		</div> -->
 		<div class="container family-spectral position-absolute bottom-0 start-50 translate-middle-x mb-5 text-center pb-md-0 pb-5">
 			<h3 class="family-pinyon">Kepada Yth.</h3>
-			<h3 style="text-shadow: 0px 0px .5rem var(--bg-1);"><?= $data['to'] ?></h3>
+			<h3 style="text-shadow: 0px 0px .5rem var(--bg-1);" class="text-bold"><?= $data['to'] ?></h3>
 			<p style="text-shadow: 0px 0px .5rem var(--bg-1)">Mohon maaf, apabila ada kesalahan dalam penulisan nama dan gelar</p>
 			<a href="#undangan-main" name="buka-undangan" class="btn text-bold bold family-pinyon" style="background-color: var(--bs-primary-bg-subtle);">Buka Undangan</a>
 		</div>
