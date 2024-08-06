@@ -98,7 +98,7 @@
 		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang Bapak/Ibu/Saudara(i) untuk hadir pada pernikahan:</div>
 		<div class="row justify-content-center">
 			<div class="col-9 col-md-5">
-				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/P.jpg" alt="mempelai perempuan" class=" w-50 w-md-75 border border-bottom-0 border-success border-2 rounded-top-4">
+				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/P.JPG" alt="mempelai perempuan" class=" w-50 w-md-75 border border-bottom-0 border-success border-2 rounded-top-4">
 			</div>
 			<div class="col">
 				<div class="row">
