@@ -87,12 +87,12 @@
 </section>
 
 <!-- IDENTITAS MEMPELAI -->
-<section class="bg-2 text-center" id="undangan-main pb-3">
+<section class="bg-2 text-center" id="undangan-main">
 	<div class="backgrond">
 	</div>
 	<div class="container mt-4 mb-2 px-4 py-3 w-100">
 		<div class="row w-100 position-relative">
-			<img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x">
+			<!-- <img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x"> -->
 		</div>
 		<p class="text-bold text-center mb-2 fs-2 family-spectral">Assalamu'alaikum Warohmatullahi Waborakatuh</p>
 		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang Bapak/Ibu/Saudara(i) untuk hadir pada pernikahan:</div>
