@@ -26,7 +26,7 @@
 		font-weight: bold;
 	}
 	.not-scroll{
-/* 		overflow: hidden; */
+		overflow: hidden;
 	}
 	.bg-1{
 		background-color: var(--bg-1);
@@ -38,7 +38,7 @@
 		color: var(--text-coklat);
 	}
 	body{
-/* 		overflow-x: hidden; */
+		overflow-x: hidden;
 	}
 	section{
 		width: 100vw;
