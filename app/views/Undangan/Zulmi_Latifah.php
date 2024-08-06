@@ -48,7 +48,8 @@
 		margin: 0;
 	}
 	.btn.on{
-		background-color: var(--bs-info);
+		background-color: var(--bs-success-bg-subtle);
+		font-weight: bold;
 	}
 	.rangkaian-acara-bungkus{
 		scroll-behavior: smooth;
@@ -76,29 +77,28 @@
 			<div class="col">&</div>
 			<div class="col-5">Zulmi</div>
 		</div> -->
-		<div class="container position-absolute bottom-0 start-50 translate-middle-x mb-5 text-center pb-md-0 pb-5">
-			<h3 class="">Kepada Yth.</h3>
+		<div class="container family-spectral position-absolute bottom-0 start-50 translate-middle-x mb-5 text-center pb-md-0 pb-5">
+			<h3 class="family-pinyon">Kepada Yth.</h3>
 			<h3 class=""><?= $data['to'] ?></h3>
 			<p class="">Mohon maaf, apabila ada kesalahan dalam penulisan nama dan gelar</p>
-			<a href="#undangan-main" name="buka-undangan" class="btn btn-info text-bold bold family-roboto">Buka Undangan</a>
+			<a href="#undangan-main" name="buka-undangan" class="btn text-bold bold family-pinyon" style="background-color: var(--bs-primary-bg-subtle);">Buka Undangan</a>
 		</div>
 	</div>
 </section>
 
 <!-- IDENTITAS MEMPELAI -->
-<section class="bg-2 text-center" id="undangan-main">
+<section class="bg-2 text-center" id="undangan-main pb-3">
 	<div class="backgrond">
 	</div>
 	<div class="container mt-4 mb-2 px-4 py-3 w-100">
 		<div class="row w-100 position-relative">
 			<img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x">
 		</div>
-		</div>
 		<p class="text-bold text-center mb-2 fs-2 family-spectral">Assalamu'alaikum Warohmatullahi Waborakatuh</p>
 		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang Bapak/Ibu/Saudara(i) untuk hadir pada pernikahan:</div>
-		<div class="row">
-			<div class="col-12 col-md-5">
-				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/P.JPG" alt="mempelai perempuan" style="max-width: 100%;" class="border border-bottom-0 border-success border-2 rounded-top-4">
+		<div class="row justify-content-center">
+			<div class="col-9 col-md-5">
+				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/P.jpg" alt="mempelai perempuan" class=" w-50 w-md-75 border border-bottom-0 border-success border-2 rounded-top-4">
 			</div>
 			<div class="col">
 				<div class="row">
@@ -113,9 +113,9 @@
 		<hr class="border-2 border-success">
 		<div class="row"><p class="mb-0 family-pinyon fs-2">dengan</p></div>
 		<hr class="col border-2 border-success">
-		<div class="row">
-			<div class="col-12 col-md-5 order-2">
-				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/L.JPG" alt="mempelai laki-laki" style="max-width: 100%;" class="border border-top-0 border-success border-2 rounded-bottom-4 order-2">
+		<div class="row d-flex justify-content-center">
+			<div class="col-9 col-md-5 order-2">
+				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/L.JPG" alt="mempelai laki-laki" class="border border-top-0 border-success border-2 rounded-bottom-4 order-2 w-50 w-md-75">
 			</div>
 			<div class="col order-1">
 				<div class="row">
@@ -132,32 +132,32 @@
 <!-- RANGKAIAN ACARA -->
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
-	<div class="container mt-4 mb-2 px-2 py-3 w-100">
+	<div class="container mt-4 mb-2 px-2 py-3 w-75">
 		<p class="text-bold text-center mb-2 fs-2 family-spectral">Rangkaian Acara</p>
 		<div id="rangkaian-acara-menu" class="row border border-start-0 mb-1 border-end-0">
 			<p acara="detail-akad" class="col btn border-end rounded-0">Akad Nikah</p>
 			<p acara="detail-resepsi" class="col btn border-start rounded-0 on">Resepsi Nikah</p>
 		</div>
-		<div class="rangkaian-acara-bungkus position-relative w-100 border-bottom pb-2 mb-2" style="overflow: hidden;" >
+		<div class="rangkaian-acara-bungkus position-relative border-bottom pb-2 mb-2" style="overflow: hidden;" >
 			<div class="d-flex flex-row position-relative" style="width: 200%;">
 				<div id="detail-akad" style="width: 50%;">
-					<p>Tanggal</p>
+					<p class="text-bold">Tanggal</p>
 					<p>Kamis, 18 Juli 2024</p>
-					<p>Waktu</p>
+					<p class="text-bold">Waktu</p>
 					<p>09.00 WIB</p>
-					<p>Hitung Mundur</p>
+					<p class="text-bold">Hitung Mundur</p>
 					<iframe id="countdown-akad" src="https://embed-countdown.onlinealarmkur.com/id/#2024-07-18T09:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
-					<p>Alamat</p>
+					<p class="text-bold">Alamat</p>
 					<p>Jl. Trans Kalimantan, Km.18, Kec. Anjir Pasar, Kab.Barito Kuala</p>
 				</div>
 				<div id="detail-resepsi" style="width: 50%;">
-					<p>Tanggal</p>
+					<p class="text-bold">Tanggal</p>
 					<p>Minggu, 08 September 2024</p>
-					<p>Waktu</p>
+					<p class="text-bold">Waktu</p>
 					<p>08.00 WIB - Selesai</p>
-					<p>Hitung Mundur</p>
+					<p class="text-bold">Hitung Mundur</p>
 					<iframe id="countdown-resepsi" src="https://embed-countdown.onlinealarmkur.com/id/#2024-09-08T08:00:00@Asia%2FJakarta" width="360" height="80" style="display: block; margin: 0px auto; border: 0px;"></iframe>
-					<p>Alamat</p>
+					<p class="text-bold">Alamat</p>
 					<p>Jl. Trans Kalimantan, Km.18, Kec. Anjir Pasar, Kab.Barito Kuala</p>
 				</div>
 			</div>
@@ -166,16 +166,16 @@
 </section>
 
 <!-- LOKASI ACARA -->
-<section id="google-maps" class="text-center mb-2 pb-4" style="background-color: #F8F9FAFF;">
+<section id="google-maps" class="text-center pb-4 py-3" style="background-color: #F8F9FAFF;">
 	<p class="text-bold text-center mb-2 fs-2 family-spectral">Lokasi Acara</p>
 	<div class="row mb-2">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1335.7446563411888!2d114.50055957738276!3d-3.1478142442717547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDgnNTIuMCJTIDExNMKwMzAnMDQuMiJF!5e0!3m2!1sid!2sid!4v1722773706520!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
-	<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn btn-success">Buka Google Maps</a>
+	<a href="https://www.google.com/maps/place/3%C2%B008'52.0%22S+114%C2%B030'04.2%22E/@-3.1478142,114.5005596,19z/data=!4m4!3m3!8m2!3d-3.147778!4d114.501167?entry=ttu" class="btn" style="background-color:var(--bs-primary-bg-subtle);"> <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps</a>
 </section>
 
 <!-- BUKU TAMU -->
-<section id="buku-tamu" class="mt-3 bg-1 pt-4">
+<section id="buku-tamu" class=" bg-1 py-4">
 	<p class="text-bold text-center mb-2 fs-2 family-spectral">Buku Tamu</p>
 	<div class="container px-4">
 		<div class="chat border rounded p-3 bg-2 my-3" style="max-height: 50vh; overflow-y: auto;"></div>
@@ -336,7 +336,8 @@
 				if(id == chat['idOrang']){
 					newChat = `<div class="card mb-2 text-end">
 						<div class="card-body py-1">
-							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between"><div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div> Saya ~
+							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between">
+								<div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div> Saya ~
 							</div>
 							<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
 								<p class="card-text">${chat['isi']}</p>
@@ -347,7 +348,8 @@
 				}else{
 					newChat = `<div class="card mb-2">
 						<div class="card-body py-1">
-							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between">~ ${chat['nama']} <div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div>
+							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between">~ ${chat['nama']}
+								<div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div>
 							</div>
 							<div class="d-flex justify-content-between flex-wrap">
 								<p class="card-text">${chat['isi']}</p>
