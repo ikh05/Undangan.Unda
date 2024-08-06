@@ -132,7 +132,7 @@
 <!-- RANGKAIAN ACARA -->
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
-	<div class="container mt-4 mb-2 px-2 py-3 w-75">
+	<div class="container mt-4 mb-2 px-2 py-3" style="width: 80%;">
 		<p class="text-bold text-center mb-2 fs-2 family-spectral">Rangkaian Acara</p>
 		<div id="rangkaian-acara-menu" class="row border border-start-0 mb-1 border-end-0">
 			<p acara="detail-akad" class="col btn border-end rounded-0">Akad Nikah</p>
