@@ -218,6 +218,11 @@
 </section>
 
 
+<section style="height: 2.5rem; font-size: .75rem;" class="text-center d-flex align-items-center justify-content-center text-bg-dark">
+	<div>Dibuat oleh Muhammad Ikhsan | <a href="https://www.instagram.com/m_ikhsann05"><i class="fa-brands fa-instagram"></i></a> <a href="https://github.com/ikh05"><i class="fa-brands fa-github"></i></a></div>
+</section>
+
+
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', ()=>{
 		// bersihkan #a dalam URL
