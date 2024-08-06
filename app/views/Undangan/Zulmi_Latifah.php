@@ -93,10 +93,9 @@
 		<div class="row w-100 position-relative">
 			<img src="<?= BASE_URL ?>assets/img/bismillah-green.png" alt="bismillah" style="max-width: 60%;" class="position-relative start-50 translate-middle-x">
 		</div>
-		<div class="row">
-			<p>Assalamu'alaikum Warohmatullahi Waborakatuh</p>
 		</div>
-		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang <?= $data['to']; ?> untuk hadir pada pernikahan:</div>
+		<p class="text-bold text-center mb-2 fs-2 family-spectral">Assalamu'alaikum Warohmatullahi Waborakatuh</p>
+		<div class="row">Dengan memohon rahmat & ridho Allah SWT, kami megundang Bapak/Ibu/Saudara(i) untuk hadir pada pernikahan:</div>
 		<div class="row">
 			<div class="col-12 col-md-5">
 				<img src="<?= BASE_URL ?>assets/img/<?= $data['dir-assets'] ?>/P.JPG" alt="mempelai perempuan" style="max-width: 100%;" class="border border-bottom-0 border-success border-2 rounded-top-4">
@@ -134,9 +133,7 @@
 <section id="rangkaian-acara" class="bg-1 text-center">
 	<div class="backgrond"></div>
 	<div class="container mt-4 mb-2 px-2 py-3 w-100">
-		<div class="row">
-			<p class="mb-2">Rangkaian Acara</p>
-		</div>
+		<p class="text-bold text-center mb-2 fs-2 family-spectral">Rangkaian Acara</p>
 		<div id="rangkaian-acara-menu" class="row border border-start-0 mb-1 border-end-0">
 			<p acara="detail-akad" class="col btn border-end rounded-0">Akad Nikah</p>
 			<p acara="detail-resepsi" class="col btn border-start rounded-0 on">Resepsi Nikah</p>
@@ -170,7 +167,7 @@
 
 <!-- LOKASI ACARA -->
 <section id="google-maps" class="text-center mb-2 pb-4" style="background-color: #F8F9FAFF;">
-	<p class="text-bold">Lokasi Acara</p>
+	<p class="text-bold text-center mb-2 fs-2 family-spectral">Lokasi Acara</p>
 	<div class="row mb-2">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1335.7446563411888!2d114.50055957738276!3d-3.1478142442717547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDgnNTIuMCJTIDExNMKwMzAnMDQuMiJF!5e0!3m2!1sid!2sid!4v1722773706520!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
@@ -339,7 +336,8 @@
 				if(id == chat['idOrang']){
 					newChat = `<div class="card mb-2 text-end">
 						<div class="card-body py-1">
-							<p class="card-title border-bottom text-bold family-roboto">Saya ~</p>
+							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between"><div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div> Saya ~
+							</div>
 							<div class="d-flex justify-content-between flex-wrap flex-row-reverse">
 								<p class="card-text">${chat['isi']}</p>
 								<p class="card-text "><small class="text-body-secondary">${chat['waktu']}</small></p>
@@ -349,7 +347,8 @@
 				}else{
 					newChat = `<div class="card mb-2">
 						<div class="card-body py-1">
-							<p class="card-title border-bottom text-bold family-roboto">~ ${chat['nama']}</p>
+							<div class="card-title border-bottom text-bold family-roboto d-flex align-items-center gap-1 justify-content-between">~ ${chat['nama']} <div class='_ket rounded-circle' style="width:.5rem; height:.5rem;"></div>
+							</div>
 							<div class="d-flex justify-content-between flex-wrap">
 								<p class="card-text">${chat['isi']}</p>
 								<p class="card-text"><small class="text-body-secondary">${chat['waktu']}</small></p>
@@ -357,6 +356,18 @@
 						</div>
 					</div>`
 				}
+				switch (chat['ket']) {
+					case -1:
+						newChat = newChat.replace('_ket', 'text-bg-danger');
+						break;
+					case 0:
+						newChat = newChat.replace('_ket', 'text-bg-warning');
+						break;
+					case 1:
+					default:
+						newChat = newChat.replace('_ket', 'text-bg-success');
+				}
+				console.log(newChat);
 				ucapan.innerHTML = ucapan.innerHTML + newChat;
 			});
 		}

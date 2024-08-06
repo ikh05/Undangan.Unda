@@ -9,8 +9,8 @@
 
 
 	<!-- offline -->
-	<!-- <link href='http://localhost/vendor/fontawesome-pro/fontawesome-pro-6.5.1-web/css/all.css' rel='stylesheet' type='text/css'>
-	<link href='http://localhost/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'> -->
+	<link href='http://localhost/vendor/fontawesome-pro/fontawesome-pro-6.5.1-web/css/all.css' rel='stylesheet' type='text/css'>
+	<link href='http://localhost/vendor/bootstrap-5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 	
 </head>
 <body id="body-main" class="not-scroll">
